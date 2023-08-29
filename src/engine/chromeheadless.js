@@ -37,7 +37,10 @@ async function generate(documentId, html, fileName) {
   logger.debug(`generating pdf for ${documentId}...`);
   fs.writeFileSync(html_file, html, 'utf8');
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ 
+    headless: true,
+    args: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage'],
+  });
   //const browser = await puppeteer.connect({ browserWSEndpoint });
   const page = await browser.newPage();
   await page.goto(fileUrl(html_file));
