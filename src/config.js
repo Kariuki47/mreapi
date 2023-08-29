@@ -1,4 +1,7 @@
 const baseConfig = require('../common/config');
+const path = require('path');
+
+const root_dir = path.join(__dirname, '..');
 
 const toBoolean = (value) => {
   if (value && typeof value !== 'boolean') {
