@@ -1,6 +1,5 @@
 # Project directories and files
 node_modules
-tmp
 .env
 .vscode/ipch
 deploy-*.sh
